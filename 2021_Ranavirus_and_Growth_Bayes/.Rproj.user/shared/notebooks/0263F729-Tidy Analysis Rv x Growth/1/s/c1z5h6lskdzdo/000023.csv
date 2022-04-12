@@ -1,0 +1,4 @@
+"0",""
+"0","#Plots of the differences densities"
+"0","ggplot(data=differences, aes(x=diff_control))+"
+"0","  geom_density()"

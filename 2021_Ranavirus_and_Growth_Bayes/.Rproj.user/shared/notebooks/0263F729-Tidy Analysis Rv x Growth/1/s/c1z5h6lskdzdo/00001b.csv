@@ -1,0 +1,4 @@
+"0",""
+"0","#this calculates the probability that one group has a higher value than the other. In this case calculating the probability that r_pipiens survived more days than p_maculata. You can never have a straight 0 or 1 but instead could say there is less than a 0.01 probability or a greater than 0.99 probability."
+"0","differences %>% "
+"0","  summarize(higher = sum(diff_control>0)/nrow(.))"

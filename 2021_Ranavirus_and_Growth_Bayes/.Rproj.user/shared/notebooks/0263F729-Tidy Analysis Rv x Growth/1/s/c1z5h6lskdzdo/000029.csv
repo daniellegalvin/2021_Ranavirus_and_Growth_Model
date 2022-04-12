@@ -1,0 +1,2 @@
+"0","ggplot(data=differences, aes(x=diff_thousands))+"
+"0","  geom_density()"

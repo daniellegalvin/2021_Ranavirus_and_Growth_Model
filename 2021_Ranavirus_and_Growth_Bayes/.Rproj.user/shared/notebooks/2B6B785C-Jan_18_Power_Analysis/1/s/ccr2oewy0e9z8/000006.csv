@@ -1,0 +1,8 @@
+"0","#Class code:
+test <- tibble(trt1=rnorm(8,2.5,2),
+               trt2=(8,1.5,2)) %>% 
+"
+"2","Error: unexpected ',' in:
+""test <- tibble(trt1=rnorm(8,2.5,2),
+               trt2=(8,""
+"

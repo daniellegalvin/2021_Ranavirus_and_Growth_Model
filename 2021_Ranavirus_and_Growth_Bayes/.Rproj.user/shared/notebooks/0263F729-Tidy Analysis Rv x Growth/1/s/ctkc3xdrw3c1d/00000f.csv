@@ -1,0 +1,30 @@
+"0","data_full <- read_csv(""Data/Data_full.csv"") "
+"1","[1mRows: [22m[34m160[39m [1mColumns: [22m[34m115[39m
+"
+"1","[36m--[39m [1mColumn specification[22m [36m---------------------------------------------------------------------------[39m
+[1mDelimiter:[22m "",""
+[31mchr[39m   (7): treatment_group, species, m_date1, m_date2, m_date3, m_date4, m_date5
+[32mdbl[39m (103): individual, species_num, stage_1, mass_1, stage_2, mass_2, stage_3, mass_3, stage_4,...
+[33mlgl[39m   (5): length_1, length_2, length_3, length_4, length_5
+"
+"1","
+[36mi[39m Use `spec()` to retrieve the full column specification for this data.
+[36mi[39m Specify the column types or set `show_col_types = FALSE` to quiet this message.
+"
+"0","#Pivot longer to make the data look nicer so I may mutate my desired columns"
+"0","data_long <- data_full %>% pivot_longer(cols=-c(individual, treatment_group, species_num, species, stage_1, mass_1, length_1, stage_2, mass_2, length_2, stage_3, mass_3, length_3, stage_4, mass_4, length_4, stage_5, mass_5, length_5, m_date1, m_date2, m_date3, m_date4, m_date5), names_to=""date_status"", values_to=""alive_status"")"
+"0",""
+"0","#Adding a column for total days each individual survived"
+"0","alive_data <- data_long %>% group_by(individual) %>%  mutate(days_survived = sum(alive_status))"
+"0",""
+"0","#Cutting the data frame down so my computer doesn't crash and ruin my life"
+"0","alive_data_small <- alive_data[, c(""individual"", ""species_num"", "
+"0","                                   ""species"", ""days_survived"", ""treatment_group"")] "
+"0",""
+"0","#Making control equal to 0"
+"0","alive_data_small$treatment_group[alive_data_small$treatment_group == ""control""] <-  0"
+"0",""
+"0","#Use this one, it is ready to go!"
+"0","real_data <- alive_data_small[!duplicated(alive_data_small$individual),] %>% "
+"0","  transform(treatment_group=as.numeric(treatment_group)) %>% "
+"0","  mutate(trt_cat = as.character(treatment_group))"

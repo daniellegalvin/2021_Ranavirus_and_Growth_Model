@@ -1,0 +1,30 @@
+"0","library(brms)"
+"2","Loading required package: Rcpp
+"
+"2","Loading 'brms' package (version 2.16.3). Useful instructions
+can be found by typing help('brms'). A more detailed introduction
+to the package is available through vignette('brms_overview').
+"
+"2","
+Attaching package: ‘brms’
+
+"
+"2","The following object is masked from ‘package:stats’:
+
+    ar
+
+"
+"0","library(tidyverse)"
+"2","Registered S3 methods overwritten by 'dbplyr':
+  method         from
+  print.tbl_lazy     
+  print.tbl_sql      
+"
+"2","Error in completeSubclasses(classDef2, class1, obj, where) : 
+  trying to get slot ""subclasses"" from an object of a basic class (""NULL"") with no slots
+"
+"2","Error: package or namespace load failed for ‘tidyverse’:
+ .onLoad failed in loadNamespace() for 'dbplyr', details:
+  call: setClass(cl, contains = c(prevClass, ""VIRTUAL""), where = where)
+  error: error in contained classes (""character"") for class “ident”; class definition removed from ‘dbplyr’
+"

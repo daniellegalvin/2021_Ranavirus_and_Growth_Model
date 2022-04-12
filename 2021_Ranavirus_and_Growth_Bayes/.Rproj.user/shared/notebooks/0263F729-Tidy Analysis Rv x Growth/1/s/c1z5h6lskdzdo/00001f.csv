@@ -1,0 +1,2 @@
+"0","differences %>% "
+"0","  summarize(higher=sum(diff_hundreds>0)/nrow(.))"

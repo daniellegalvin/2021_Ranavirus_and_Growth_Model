@@ -1,0 +1,3 @@
+"0","plot(conditional_effects(final_model), points = T) # T shows your data points in the graph"
+"0",""
+"0",""

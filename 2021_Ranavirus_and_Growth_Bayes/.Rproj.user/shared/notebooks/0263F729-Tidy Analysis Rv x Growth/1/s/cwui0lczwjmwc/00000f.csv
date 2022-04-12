@@ -1,0 +1,5 @@
+"0","options(scipen=999)"
+"0","inf_data <- read.csv(""Data/exposure_values.csv"") %>% "
+"0","  clean_names() %>% "
+"0","  mutate(average_virus=((sample_1+sample_2+sample_3)/3)) %>% "
+"0","  mutate(treatment=as.factor(treatment))"
